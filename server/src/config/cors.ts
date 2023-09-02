@@ -1,5 +1,5 @@
 export const corsOptions = {
   origin: '*',
   credentials: true,
-  optionsSuccessStatus: 200
-}
+  optionsSuccessStatus: 200,
+};
