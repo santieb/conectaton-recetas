@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
       "pretty": true,
-      "target": "es2020", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-      "module": "NodeNext", /* Specify what module code is generated. */
+      // "target": "es2020", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+      "target": "es2016" ,
+      // "module": "NodeNext", /* Specify what module code is generated. */
+      "module": "CommonJS",
       "rootDir": "./src", /* Specify the root folder within your source files. */
-      "moduleResolution": "NodeNext",
+      
+      // "moduleResolution": "NodeNext",
+       "moduleResolution": "node", 
       "sourceMap": true, /* Specify how TypeScript looks up a file from a given module specifier. */
       "outDir": "./dist", /* Specify an output folder for all emitted files. */
       "removeComments": true, /* Disable emitting comments. */
@@ -31,8 +35,18 @@
       /* Skip type checking .d.ts files that are included with TypeScript. */
       "skipLibCheck": true,
       "typeRoots": [
-          "./src/@types",
+          "./src/@types"
       ], /* Skip type checking all .d.ts files. */
+
+      // agrego lo que tenia en mi configuracion
+      "paths": {
+        "@/*": ["src/*"]
+      },        
+      "resolveJsonModule": true /* Enable importing .json files. */,
+          /* JavaScript Support */
+    "allowJs": true /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */,
+    "checkJs": true /* Enable error reporting in type-checked JavaScript files. */
+
   },
   "exclude": [
       "node_modules"
