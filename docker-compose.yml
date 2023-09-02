@@ -1,0 +1,48 @@
+version: "3.3"
+services:
+  back:
+    build: ./server
+    container_name: back
+    restart: always
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    ports:
+      - "${BACK_PORT}:3000"
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: "1"
+#          memory: 128M
+#        reservations:
+#          cpus: "0.25"
+#          memory: 64M
+    volumes:
+      - ./server:/server
+    command: >
+      sh -c "npm run start:dev "
+    #  sh -c "npm run dev --prefix /app/front && npm run dev --prefix /app/back"
+    # Se quita la opcion run doc por que genera conflicto al inicio con swagger
+    # sh -c "npm run dev "
+    #
+#    depends_on:
+#      - postgres
+    networks:
+      red-conecta:
+        ipv4_address: 111.100.100.10
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "3m"
+networks:
+  red-conecta:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 111.100.100.0/24
+#volumes:
+#  pgadmin-data:
+#    driver_opts:
+#      type: none
+#      o: bind
+#      device: /docker-data/ipes/pgadmin
