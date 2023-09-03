@@ -46,7 +46,9 @@ const options = {
 };
 
 const swaggerSpec = swaggerJSDoc(options);
-
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+const test = require('./endpoints/test2');
+app.use('/test', test);
 
 app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
