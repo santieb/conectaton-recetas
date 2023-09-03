@@ -12,3 +12,4 @@
         docker-compose run back npm i 
     Para hacer correr el servicio ejecutar el comando 
         docker-compose up -d 
+        
