@@ -17,6 +17,8 @@
       "quotes": ["error", "single"], // Agrega esta regla para comillas simples
       "semi": ["error", "always"],
       "space-before-function-paren": "off",
+      "spaced-comment": "off",
+
       // "comma-dangle": ["error", "always"],
       "comma-dangle": "off"
       // or
