@@ -1,0 +1,237 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "EjemploRegistroPrescripcion",
+  "meta" : {
+    "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/recetaDigitalRegistroRecetaAR"]
+  },
+  "type" : "transaction",
+  "timestamp" : "2023-07-06T15:00:03.790+00:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:065c6f50-28de-4224-b950-a764396d4a25",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "EjemploDatosPrescripcion",
+      "meta" : {
+        "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/datosPrescripcionAR"]
+      },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medicamento: amoxicilina 500 mg 1 comprimido cada 8 horas por una semana</div>"
+      },
+      "identifier" : [{
+        "system" : "http://www.recetita.com.tk/grupo8",
+        "value" : "d57a4eaa-4b4e-11ee-be56-0242ac120002"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "medicationCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://fhir.msal.gob.ar/RDI/CodeSystem/CSMedicamentosGenericosSCT",
+          "code" : "374646004",
+          "display" : "amoxicilina 500 mg por cada comprimido para administración oral"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:015c6f50-28de-4224-b950-a764396d4a25",
+        "display" : "Ariel Binder Gärtner,"
+      },
+      "supportingInformation" : [{
+        "reference" : "urn:uuid:035c6f50-28de-4224-b950-a764396d4a25"
+      }],
+      "authoredOn" : "2023-07-14T00:00:00+00:00",
+      "requester" : {
+        "reference" : "urn:uuid:045c6f50-28de-4224-b950-a764396d4a25",
+        "display" : "Saul Cureta"
+      },
+      "reasonCode" : [{
+        "coding" : [{
+          "system" : "http://fhir.msal.gob.ar/RDI/CodeSystem/csproblemas-salud",
+          "code" : "195658003",
+          "display" : "faringitis bacteriana aguda"
+        }]
+      }],
+      "groupIdentifier" : {
+        "system" : "https://repositorio5555.com.ar/fhir",
+        "value" : "7cdea8dc-81f3-483f-aaf1-41619d853c6e"
+      },
+      "insurance" : [{
+        "reference" : "urn:uuid:075c6f50-28de-4224-b950-a764396d4a25"
+      }],
+      "dosageInstruction" : [{
+        "text" : "1 comprimido cada 8 horas por una semana",
+        "timing" : {
+          "repeat" : {
+            "duration" : 7,
+            "durationMax" : 7,
+            "durationUnit" : "d",
+            "frequency" : 8,
+            "period" : 1,
+            "periodUnit" : "h"
+          }
+        }
+      }],
+      "dispenseRequest" : {
+        "validityPeriod" : {
+          "start" : "2023-09-04"
+        },
+        "quantity" : {
+          "value" : 1
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicationRequest?identifier=d57a4eaa-4b4e-11ee-be56-0242ac120002"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:015c6f50-28de-4224-b950-a764396d4a25",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "EjemploDatosPaciente",
+      "meta" : {
+        "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/datosPacienteAR"]
+      },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ariel Binder Gärtner DNI: 66666666</div>"
+      },
+      "identifier" : [{
+        "use" : "official",
+        "system" : "http://www.renaper.gob.ar/dni",
+        "value" : "66666666"
+      },
+      {
+        "use" : "secondary",
+        "system" : "http://sistemadesalud.com.ar/Patient",
+        "value" : "9999"
+      }],
+      "name" : [{
+        "text" : "Ariel Binder Gärtner",
+        "family" : "Gärtner",
+        "_family" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/humanname-fathers-family",
+            "valueString" : "Gärtner"
+          }]
+        },
+        "given" : ["Ariel",
+        "Binder"]
+      }],
+      "gender" : "male",
+      "birthDate" : "2002-09-04"
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Patient?identifier=http://www.renaper.gob.ar/dni|66666666"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:075c6f50-28de-4224-b950-a764396d4a25",
+    "resource" : {
+      "resourceType" : "Coverage",
+      "id" : "EjemploDatosCobertura",
+      "meta" : {
+        "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/datosCoberturaAR"]
+      },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">OBRA SOCIAL DE EJEMPLO - PLAN JOVEN - 206850/01</div>"
+      },
+      "identifier" : [{
+        "system" : "http://ssalud.gob.ar/coberturas-13566-carnet",
+        "value" : "206850-01"
+      }],
+      "status" : "active",
+      "beneficiary" : {
+        "reference" : "urn:uuid:015c6f50-28de-4224-b950-a764396d4a25"
+      },
+      "payor" : [{
+        "identifier" : {
+          "system" : "http://ssalud.gob.ar/coberturas",
+          "value" : "13566"
+        },
+        "display" : "OBRA SOCIAL DE EJEMPLO"
+      }],
+      "class" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code" : "plan",
+            "display" : "Plan"
+          }]
+        },
+        "value" : "13566_3",
+        "name" : "Plan Joven"
+      }]
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Coverage?identifier=http://ssalud.gob.ar/coberturas-13566-carnet|206850-01"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:045c6f50-28de-4224-b950-a764396d4a25",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "EjemploDatosPrescriptor",
+      "meta" : {
+        "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/datosPrescriptorAR"]
+      },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Saul Pureta</div>"
+      },
+      "identifier" : [{
+        "use" : "official",
+        "system" : "http://www.renaper.gob.ar/dni",
+        "value" : "99999999"
+      },
+      {
+        "use" : "usual",
+        "system" : "https://sisa.msal.gov.ar/REFEPS",
+        "value" : "541099999999"
+      }],
+      "name" : [{
+        "text" : "Saul Pureta"
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "5555-5555"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Practitioner?identifier=https://sisa.msal.gov.ar/REFEPS|541099999999"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:035c6f50-28de-4224-b950-a764396d4a25",
+    "resource" : {
+      "resourceType" : "Location",
+      "id" : "EjemploDatosLugar",
+      "meta" : {
+        "profile" : ["http://fhir.msal.gob.ar/RDI/StructureDefinition/datosLugarAR"]
+      },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">La Ponderosa</div>"
+      },
+      "identifier" : [{
+        "system" : "http://refes.msal.gob.ar",
+        "value" : "1234567890"
+      }],
+      "name" : "La Ponderosa",
+      "address" : {
+        "line" : ["CALLE 34 NRO 2023"],
+        "city" : "LA PLATA",
+        "state" : "BUENOS AIRES",
+        "postalCode" : "2000"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Location?identifier=http://refes.msal.gob.ar|1234567890"
+    }
+  }]
+}
